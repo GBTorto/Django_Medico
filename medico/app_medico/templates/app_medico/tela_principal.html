@@ -1,0 +1,14 @@
+{% extends 'app_medico/background.html' %}
+{% load static %}
+
+{% block title %}Tela Principal{% endblock %}
+
+{% block content %}
+<div class="tela-principal">
+    <h2>Escolha uma opção</h2>
+    <div class="opcoes">
+        <a href="{% url 'app_medico:add_medico' %}" class="btn-opcao">👨‍⚕️ Médico</a>
+        
+    </div>
+</div>
+{% endblock %}

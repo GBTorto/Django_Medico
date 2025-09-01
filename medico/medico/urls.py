@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from app_medico.views import tela_principal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('medico/', include('app_medico.urls')),
+    path('', tela_principal, name='tela_principal'),
+    path('medico/', include('app_medico.urls', namespace='app_medico')),
     # path('especialide/', include('app_especialidade.urls')),
 ]
