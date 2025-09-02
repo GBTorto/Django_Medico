@@ -16,3 +16,5 @@ class AddForm(forms.ModelForm):
             'crm': forms.TextInput(attrs={'class': 'form-control'}),
             'especialidade': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+# de Gabriel Morais

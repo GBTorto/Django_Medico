@@ -1,0 +1,15 @@
+{% extends 'app_medico/background.html' %}
+
+{% block title %}Tela Médico{% endblock title %}
+
+{% block content %}
+<div class="tela-principal">
+    <h2>Escolha uma opção</h2>
+    <div class="opcoes">
+        <a href="{% url 'app_medico:add_medico' %}" class="btn-opcao">Adicionar Médico</a>
+        <a href="{% url 'app_medico:medicos_cadastrados' %}" class="btn-opcao">Médicos</a>
+    </div>
+</div>
+{% endblock %}
+
+<!-- de Gabriel Morais -->

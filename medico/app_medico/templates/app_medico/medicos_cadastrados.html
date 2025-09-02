@@ -1,0 +1,19 @@
+{% extends 'app_medico/background.html' %}
+
+{% block title %}Médicos cadastrados{% endblock title %}
+
+{% block content %}
+    <ul class="medicos-lista">
+        {% for contact in contacts %}
+            <li>
+                <div>
+                    <h2 class="name">{{ contact.nome }}</h2>
+                    <!-- <p class="especialidade">{{ contact.especialidade_id }}</p> -->
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
+
+<!-- de Gabriel Morais -->

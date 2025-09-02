@@ -1,22 +1,19 @@
 {% extends 'app_medico/background.html' %}
-<!-- {% load static %} -->
+{% load static %}
 
-{% block title %}Add Médico{% endblock title %}
-
+{% block title %}Add Especialidade{% endblock title %}
 
 {% block content %}
     <div class="container-add">
         <form action="#" method="POST" role="form">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{form.as_p}}
 
             <div class="text-center">
                 <button class="btn">Adicionar</button>
             </div>
-
         </form>
     </div>
-
 {% endblock content %}
 
 <!-- de Gabriel Morais -->
