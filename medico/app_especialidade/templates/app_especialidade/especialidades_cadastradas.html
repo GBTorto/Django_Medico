@@ -8,6 +8,8 @@
             <li>
                 <div>
                     <h2 class="name">{{ especialidade.nome }}</h2>
+                    <a href="{% url 'app_especialidade:editar_especialidade' especialidade.pk %}">Editar</a>
+                    <a href="{% url 'app_especialidade:deletar_especialidade' especialidade.pk %}">Deletar</a>
                     <!-- <p class="especialidade">{{ contact.especialidade_id }}</p> -->
                 </div>
             </li>

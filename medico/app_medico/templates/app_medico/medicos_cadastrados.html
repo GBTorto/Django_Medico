@@ -8,6 +8,8 @@
             <li>
                 <div>
                     <h2 class="name">{{ contact.nome }}</h2>
+                    <a href="{% url 'app_medico:editar_medico' contact.pk %}" class="btn-opcao">Editar</a>
+                    <a href="{% url 'app_medico:deletar_medico' contact.pk %}" class="btn-opcao">Deletar</a>
                     <!-- <p class="especialidade">{{ contact.especialidade_id }}</p> -->
                 </div>
             </li>
