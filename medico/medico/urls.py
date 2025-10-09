@@ -21,6 +21,8 @@ from app_medico.views import tela_principal
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tela_principal, name='tela_principal'),
-    path('medico/', include('app_medico.urls', namespace='app_medico')),
+    path('medico/', include('app_medico.urls', namespace='app_medico')),    
     path('especialide/', include('app_especialidade.urls', namespace='app_especialidade'),),
+
+    path('', include('accounts.urls')),  # Inclui as URLs do seu aplicativo   
 ]

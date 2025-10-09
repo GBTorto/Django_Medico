@@ -3,6 +3,7 @@ from .forms import AddForm
 from .models import Medico
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -33,24 +34,24 @@ def tela_principal_medico(request):
 #     # Renderiza o template, passando o formulário para ele
 #     return render(request, 'app_medico/add_medico.html', {'form': form})
 
-class ListaMedico(ListView):
+class ListaMedico(LoginRequiredMixin, ListView):
     model = Medico
     template_name = 'app_medico/medicos_cadastrados.html'
     context_object_name = 'contacts'
 
-class AddMedico(CreateView):
+class AddMedico(LoginRequiredMixin, CreateView):
     model = Medico
     form_class = AddForm
     template_name = 'app_medico/add_medico.html'
     success_url = reverse_lazy('app_medico:tela_principal_medico')
 
-class EditarMedico(UpdateView):
+class EditarMedico(LoginRequiredMixin, UpdateView):
     model = Medico
     form_class = AddForm
     template_name = 'app_medico/add_medico.html'
     success_url = reverse_lazy('app_medico:tela_principal_medico')
 
-class DeletarMedico(DeleteView):
+class DeletarMedico(LoginRequiredMixin, DeleteView):
     model = Medico
     success_url = reverse_lazy('app_medico:medicos_cadastrados')
 

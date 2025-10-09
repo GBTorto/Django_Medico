@@ -3,6 +3,7 @@ from .forms import AddForm
 from .models import Especialidade
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def tela_principal_especialidade(request):
@@ -27,24 +28,24 @@ def tela_principal_especialidade(request):
 
 #     return render(request, 'app_especialidade/add_especialidade.html', {'form': form})
 
-class ListaEspecialidade(ListView):
+class ListaEspecialidade(LoginRequiredMixin, ListView):
     model = Especialidade
     template_name = 'app_especialidade/especialidades_cadastradas.html'
     context_object_name = 'especialidades'
 
-class AddEspecialidade(CreateView):
+class AddEspecialidade(LoginRequiredMixin, CreateView):
     model = Especialidade
     form_class = AddForm
     template_name = 'app_especialidade/add_especialidade.html'
     success_url = reverse_lazy('app_especialidade:tela_principal_especialidade')
 
-class EditarEspecialidade(UpdateView):
+class EditarEspecialidade(LoginRequiredMixin, UpdateView):
     model = Especialidade
     form_class = AddForm
     template_name = 'app_especialidade/add_especialidade.html'
     success_url = reverse_lazy('app_especialidade:tela_principal_especialidade')
 
-class DeletarEspecialidade(DeleteView):
+class DeletarEspecialidade(LoginRequiredMixin, DeleteView):
     model = Especialidade
     success_url = reverse_lazy('app_especialidade:especialidades_cadastradas')
 
